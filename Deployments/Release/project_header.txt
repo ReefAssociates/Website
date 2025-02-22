@@ -1,0 +1,31 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Untitled Document</title>
+<link href="style.css" rel="stylesheet" type="text/css" />
+
+<script type="text/JavaScript">
+<!--
+function RestorePos() {
+  document.body.scrollTop = parent.parent.ypos
+}
+//-->
+</script>
+<style type="text/css">
+<!--
+html {
+	overflow-x: hidden;
+	overflow-y: scroll;
+}
+-->
+</style>
+<script type="text/javascript" src="scrollbar.js"></script>
+</head>
+
+<body onload="RestorePos()">
+<table cellpadding="0" cellspacing="0" class="small">
+  <tr>
+    <td width="15">&nbsp;</td>
+    <td width="225" class="h1">PROJECT</td>
+    <td width="230" class="h1">CLIENT / ARCHITECT </td>
+  </tr>

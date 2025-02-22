@@ -1,0 +1,80 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Untitled Document</title>
+<link href="style.css" rel="stylesheet" type="text/css" />
+
+<style type="text/css">
+<!--
+.txtbox {
+
+	color: #FFFFFF;
+	background-color: #000000;
+	border: 1px solid #CCCCCC;
+	font-size: 11px;
+	font-family: Arial, Helvetica, sans-serif;
+	padding-left: 6px;
+	overflow: auto;
+	margin-top: 10px;
+}
+-->
+</style>
+<script type="text/javascript" src="scrollbar.js"></script>
+</head>
+
+<body>
+<form action="thankyou.asp" method="post" name="form1" id="form1">
+  <label></label>
+  <table border="0" cellspacing="0" cellpadding="0">
+    
+    <tr>
+      <td colspan="3"><label>Please use the form below to contact us regarding any matter.<br />
+      We will contact you shortly, if requested.</label></td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td><label>
+        <input name="name" type="text" class="txtbox" id="name" tabindex="1" onfocus="if (this.value == 'Name') this.value = '';" onblur="if (this.value == '') this.value = 'Name';" value="Name" size="30" maxlength="30" />
+      </label></td>
+      <td width="40">&nbsp; </td>
+      <td rowspan="6" valign="top"><textarea name="enquiry" cols="40" rows="7" class="txtbox" id="enquiry" tabindex="6" onfocus="if (this.value == 'Nature of enquiry') this.value = '';" onblur="if (this.value == '') this.value = 'Nature of enquiry';">Nature of enquiry</textarea>
+        <label> <br />
+        <input name="callback" type="checkbox" id="callback" tabindex="7" value="checkbox" />
+Please call back</label>
+        <br />
+        <label>
+        <input name="brochure" type="checkbox" id="brochure" tabindex="8" value="checkbox" />
+Email brochure<br />
+<input name="meeting" type="checkbox" id="meeting" tabindex="9" value="checkbox" />
+Arrange meeting</label>
+      <label></label></td>
+    </tr>
+    <tr>
+      <td><input name="organisation" type="text" class="txtbox" id="organisation" tabindex="2" onfocus="if (this.value == 'Organisation') this.value = '';" onblur="if (this.value == '') this.value = 'Organisation';" value="Organisation" size="30" maxlength="30" /></td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td><textarea name="address" cols="26" rows="4" class="txtbox" id="address" tabindex="3" onfocus="if (this.value == 'Address') this.value = '';" onblur="if (this.value == '') this.value = 'Address';">Address</textarea></td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td><input name="phone" type="text" class="txtbox" id="phone" tabindex="4" onfocus="if (this.value == 'Contact Phone') this.value = '';" onblur="if (this.value == '') this.value = 'Contact Phone';" value="Contact Phone" size="30" /></td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td><input name="email" type="text" class="txtbox" id="email" tabindex="5" onfocus="if (this.value == 'Email') this.value = '';" onblur="if (this.value == '') this.value = 'Email';" value="Email" size="30" /></td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td height="40" valign="bottom"><input name="Submit Button" type="image" src="images/btn_submit.gif" alt="Send Enquiry" /></td>
+      <td>&nbsp;</td>
+    </tr>
+  </table>
+</form>
+</body>
+</html>
