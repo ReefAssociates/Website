@@ -1,0 +1,66 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Frameset//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-frameset.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type" />
+    <title>Untitled Document</title>
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        table {
+            width: 100%;
+            height: 100%;
+            border-collapse: collapse;
+        }
+
+        tr:last-child {
+            height: 100%; /* Fill the remaining space */
+        }
+
+        a {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <script>
+        function getQueryStringParameter(name) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(name);
+        }</script>
+</head>
+<body>
+    <table border="0" cellpadding="0" cellspacing="0">
+        <tr>
+            <td>
+                <strong class="h1" id="full">Full</strong>
+                <span id="client"></span>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <a href="project_frame.htm" target="main">
+                    <img id="centeredImage" src="" alt="" />
+                </a>
+            </td>
+        </tr>
+    </table>
+    <script>
+        var image = document.getElementById('centeredImage');
+        image.src = 'images/prj/' + getQueryStringParameter('ref') + '_' + getQueryStringParameter('num') + '.jpg';
+        image.alt = getQueryStringParameter('full');
+
+        var header = document.getElementById('full');
+        header.innerText = image.alt;
+
+        var client = document.getElementById('client');
+        client.innerText = getQueryStringParameter('client');
+    </script>
+</body>
+</html>
