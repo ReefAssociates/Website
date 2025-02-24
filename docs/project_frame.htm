@@ -4,13 +4,32 @@
     <meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type"/>
     <title>Untitled Document</title>
 
+    <script>
+        function getQueryStringParameter(name) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(name);
+        }
+    </script>
 </head>
+
+<script>
+    window.onload = function() {
+        var ref = getQueryStringParameter('ref');
+        if (ref !== '') {
+            var mainFrame = document.getElementById('mainFrame');
+            if (mainFrame) {
+                mainFrame.src = "project_list.htm?#" + ref;
+            }
+        }
+    };
+</script>
 
 <frameset border="0" cols="240,*" frameborder="no" framespacing="0">
     <frame id="leftFrame" name="leftFrame" noresize="noresize" scrolling="no" src="project_blank.htm"
            title="leftFrame"/>
     <frame id="mainFrame" name="mainFrame" scrolling="yes" src="project_list.htm" title="mainFrame"/>
 </frameset>
+
 <noframes>
     <body>
     </body>

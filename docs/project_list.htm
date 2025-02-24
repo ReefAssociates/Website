@@ -7,10 +7,57 @@
     <script type="text/JavaScript">
         <!--
         function RestorePos() {
-            document.body.scrollTop = parent.parent.ypos
+            // Get the id from the current page fragment
+            var id = window.location.hash.substring(1);
+
+            // Find the element with the specified id
+            var element = document.getElementById(id);
+
+            if (element) {
+                // Find the first anchor after the element
+                var anchor = element.querySelector('a');
+
+                if (anchor) {
+                    if (element) {
+
+                        // remove all highlights
+                        removeAllHighlights();
+
+                        // Add the highlight class to the element
+                        element.classList.add('highlight');
+
+                        // Click the anchor
+                        anchor.click();
+                    }
+                }
+            }
         }
 
+        function rowHighlight(element) {
+
+            // remove all highlights
+            removeAllHighlights();
+
+            // Find the closest parent tr element
+            var parentRow = element.closest('tr');
+
+            if (parentRow) {
+                // Add the highlight class to the parent tr element
+                parentRow.classList.add('highlight');
+            }
+        }
+
+        function removeAllHighlights() {
+            // Get all elements with the highlight class
+            var highlightedElements = document.querySelectorAll('.highlight');
+
+            // Loop through each element and remove the highlight class
+            highlightedElements.forEach(function (element) {
+                element.classList.remove('highlight');
+            });
+        }
         //-->
+
     </script>
     <style type="text/css">
         <!--
@@ -61,10 +108,10 @@
         <td>Abdali Tower, Jordan</td>
         <td>Foster &amp; Partners</td>
     </tr>
-    <tr>
+    <tr id="athe">
         <td><img alt="Click to view more information" height="10" src="images/camera.gif" width="13"/></td>
-        <td><a href="projects/Athene%20Place,%20London.htm" target="leftFrame">Athene Place, London</a></td>
-        <td><a href="projects/Athene%20Place,%20London.htm" target="leftFrame">Delliotte Touche / EPR Architects</a>
+        <td><a onclick="rowHighlight(this)" href="projects/Athene%20Place,%20London.htm" target="leftFrame">Athene Place, London</a></td>
+        <td><a onclick="rowHighlight(this)" href="projects/Athene%20Place,%20London.htm" target="leftFrame">Delliotte Touche / EPR Architects</a>
         </td>
     </tr>
     <tr>
@@ -232,10 +279,10 @@
         <td>Palestra, London</td>
         <td>Skanska / Alsop Architects</td>
     </tr>
-    <tr>
+    <tr id="qmil">
         <td><img alt="Click to view more information" height="10" src="images/camera.gif" width="13"/></td>
-        <td><a href="projects/Quartermile%2C%20Edinburgh.htm" target="leftFrame">Quartermile, Edinburgh</a></td>
-        <td><a href="projects/Quartermile%2C%20Edinburgh.htm" target="leftFrame">Southside Capital / Foster &amp;
+        <td><a onclick="rowHighlight(this)" href="projects/Quartermile%2C%20Edinburgh.htm" target="leftFrame">Quartermile, Edinburgh</a></td>
+        <td><a onclick="rowHighlight(this)" href="projects/Quartermile%2C%20Edinburgh.htm" target="leftFrame">Southside Capital / Foster &amp;
             Partners</a></td>
     </tr>
     <tr>
@@ -268,11 +315,11 @@
         <td>133 Houndsditch, London</td>
         <td>Gardiner &amp; Theobald / Wilkinson Eyre</td>
     </tr>
-    <tr>
+    <tr id="ds1">
         <td><img alt="Click to view more information" height="10" src="images/camera.gif" width="13"/></td>
-        <td><a href="projects/5%20Canada%20Square%2C%20Canary%20Wharf.htm" target="leftFrame">5 Canada Square, Canary
+        <td><a onclick="rowHighlight(this)" href="projects/5%20Canada%20Square%2C%20Canary%20Wharf.htm" target="leftFrame">5 Canada Square, Canary
             Wharf</a></td>
-        <td><a href="projects/5%20Canada%20Square%2C%20Canary%20Wharf.htm" target="leftFrame">Credit Suisse / SOM</a>
+        <td><a onclick="rowHighlight(this)" href="projects/5%20Canada%20Square%2C%20Canary%20Wharf.htm" target="leftFrame">Credit Suisse / SOM</a>
         </td>
     </tr>
     <tr>
@@ -285,11 +332,11 @@
         <td>Central Bank of Kuwait</td>
         <td>Bank of Kuwait / HOK / PACE</td>
     </tr>
-    <tr>
+    <tr id="k2">
         <td><img alt="Click to view more information" height="10" src="images/camera.gif" width="13"/></td>
-        <td><a href="projects/K2%2C%20St.%20Katharine%92s%20Estate%2C%20London.htm" target="leftFrame">K2, St. Katharine&#146;s
+        <td><a onclick="rowHighlight(this)" href="projects/K2%2C%20St.%20Katharine%92s%20Estate%2C%20London.htm" target="leftFrame">K2, St. Katharine&#146;s
             Estate, London</a></td>
-        <td><a href="projects/K2%2C%20St.%20Katharine%92s%20Estate%2C%20London.htm" target="leftFrame">Richard Rogers
+        <td><a onclick="rowHighlight(this)" href="projects/K2%2C%20St.%20Katharine%92s%20Estate%2C%20London.htm" target="leftFrame">Richard Rogers
             Partnership</a></td>
     </tr>
     <tr>
@@ -327,11 +374,11 @@
         <td>Torre Mutua, Madrid</td>
         <td>Cesar Pelli</td>
     </tr>
-    <tr>
+    <tr id="qv99">
         <td><img alt="Click to view more information" height="10" src="images/camera.gif" width="13"/></td>
-        <td><a href="projects/99-101%20Queen%20Victoria%20St%2C%20London.htm" target="leftFrame">99-101 Queen Victoria
+        <td><a onclick="rowHighlight(this)" href="projects/99-101%20Queen%20Victoria%20St%2C%20London.htm" target="leftFrame">99-101 Queen Victoria
             St, London</a></td>
-        <td><a href="projects/99-101%20Queen%20Victoria%20St%2C%20London.htm" target="leftFrame">Stanhope / Sheppard
+        <td><a onclick="rowHighlight(this)" href="projects/99-101%20Queen%20Victoria%20St%2C%20London.htm" target="leftFrame">Stanhope / Sheppard
             Robson</a></td>
     </tr>
     <tr>
@@ -339,17 +386,17 @@
         <td>Asprey, London</td>
         <td>Asprey / Foster &amp; Partners</td>
     </tr>
-    <tr>
+    <tr id="biam">
         <td><img alt="Click to view more information" height="10" src="images/camera.gif" width="13"/></td>
-        <td><a href="projects/Bank%20of%20Ireland%2C%20Dublin.htm" target="leftFrame">Bank of Ireland, Dublin</a></td>
-        <td><a href="projects/Bank%20of%20Ireland%2C%20Dublin.htm" target="leftFrame">Bank of Ireland Asset
+        <td><a onclick="rowHighlight(this)" href="projects/Bank%20of%20Ireland%2C%20Dublin.htm" target="leftFrame">Bank of Ireland, Dublin</a></td>
+        <td><a onclick="rowHighlight(this)" href="projects/Bank%20of%20Ireland%2C%20Dublin.htm" target="leftFrame">Bank of Ireland Asset
             Management</a></td>
     </tr>
-    <tr>
+    <tr id="belm">
         <td><img alt="Click to view more information" height="10" src="images/camera.gif" width="13"/></td>
-        <td><a href="projects/Bellmouth%20Passage%20Bridges%2C%20Canary%20Wharf.htm" target="leftFrame">Bellmouth
+        <td><a onclick="rowHighlight(this)" href="projects/Bellmouth%20Passage%20Bridges%2C%20Canary%20Wharf.htm" target="leftFrame">Bellmouth
             Passage Bridges, Canary Wharf</a></td>
-        <td><a href="projects/Bellmouth%20Passage%20Bridges%2C%20Canary%20Wharf.htm" target="leftFrame">Canary Wharf /
+        <td><a onclick="rowHighlight(this)" href="projects/Bellmouth%20Passage%20Bridges%2C%20Canary%20Wharf.htm" target="leftFrame">Canary Wharf /
             Patel Taylor</a></td>
     </tr>
     <tr>
@@ -402,15 +449,15 @@
         <td>Open University, Oxford</td>
         <td>OU / Swanke Hayden Connell</td>
     </tr>
-    <tr>
+    <tr id="rbss">
         <td><img alt="Click to view more information" height="10" src="images/camera.gif" width="13"/></td>
-        <td><a href="projects/RBS%2C%20Southend.htm" target="leftFrame">RBS, Southend</a></td>
-        <td><a href="projects/RBS%2C%20Southend.htm" target="leftFrame">RBS / BDP</a></td>
+        <td><a onclick="rowHighlight(this)" href="projects/RBS%2C%20Southend.htm" target="leftFrame">RBS, Southend</a></td>
+        <td><a onclick="rowHighlight(this)" href="projects/RBS%2C%20Southend.htm" target="leftFrame">RBS / BDP</a></td>
     </tr>
-    <tr>
+    <tr id="w8">
         <td><img alt="Click to view more information" height="10" src="images/camera.gif" width="13"/></td>
-        <td><a href="projects/Regent%20Street%20W8%2C%20London.htm" target="leftFrame">Regent Street W8, London</a></td>
-        <td><a href="projects/Regent%20Street%20W8%2C%20London.htm" target="leftFrame">Church Comm&#146;s / Stanhope /
+        <td><a onclick="rowHighlight(this)" href="projects/Regent%20Street%20W8%2C%20London.htm" target="leftFrame">Regent Street W8, London</a></td>
+        <td><a onclick="rowHighlight(this)" href="projects/Regent%20Street%20W8%2C%20London.htm" target="leftFrame">Church Comm&#146;s / Stanhope /
             Sheppard Robson</a></td>
     </tr>
     <tr>
@@ -428,37 +475,37 @@
         <td>SwissRe Fit Out</td>
         <td>SwissReinsurance / Bennett Interior Design</td>
     </tr>
-    <tr>
+    <tr id="qv95">
         <td><img alt="Click to view more information" height="10" src="images/camera.gif" width="13"/></td>
-        <td><a href="projects/95%20Queen%20Victoria%20St%2C%20London.htm" target="leftFrame">95 Queen Victoria St,
+        <td><a onclick="rowHighlight(this)" href="projects/95%20Queen%20Victoria%20St%2C%20London.htm" target="leftFrame">95 Queen Victoria St,
             London</a></td>
-        <td><a href="projects/95%20Queen%20Victoria%20St%2C%20London.htm" target="leftFrame">Stanhope / Sheppard
+        <td><a onclick="rowHighlight(this)" href="projects/95%20Queen%20Victoria%20St%2C%20London.htm" target="leftFrame">Stanhope / Sheppard
             Robson</a></td>
     </tr>
-    <tr>
+    <tr id="albw">
         <td><img alt="Click to view more information" height="10" src="images/camera.gif" width="13"/></td>
-        <td><a href="projects/Albion%20Wharf%2C%20London.htm" target="leftFrame">Albion Wharf, London</a></td>
-        <td><a href="projects/Albion%20Wharf%2C%20London.htm" target="leftFrame">Foster &amp; Partners</a></td>
+        <td><a onclick="rowHighlight(this)" href="projects/Albion%20Wharf%2C%20London.htm" target="leftFrame">Albion Wharf, London</a></td>
+        <td><a onclick="rowHighlight(this)" href="projects/Albion%20Wharf%2C%20London.htm" target="leftFrame">Foster &amp; Partners</a></td>
     </tr>
-    <tr>
+    <tr id="bp">
         <td><img alt="Click to view more information" height="10" src="images/camera.gif" width="13"/></td>
-        <td><a href="projects/Barclays%20Bank%2C%20Canary%20Wharf.htm" target="leftFrame">Barclays Bank, Canary
+        <td><a onclick="rowHighlight(this)" href="projects/Barclays%20Bank%2C%20Canary%20Wharf.htm" target="leftFrame">Barclays Bank, Canary
             Wharf</a></td>
-        <td><a href="projects/Barclays%20Bank%2C%20Canary%20Wharf.htm" target="leftFrame">Canary Wharf / Adamson Assoc /
+        <td><a onclick="rowHighlight(this)" href="projects/Barclays%20Bank%2C%20Canary%20Wharf.htm" target="leftFrame">Canary Wharf / Adamson Assoc /
             HOK.</a></td>
     </tr>
-    <tr>
+    <tr id="ds5">
         <td><img alt="Click to view more information" height="10" src="images/camera.gif" width="13"/></td>
-        <td><a href="projects/Citibank%20Tower%2C%20Canary%20Wharf.htm" target="leftFrame">Citibank Tower, Canary
+        <td><a onclick="rowHighlight(this)" href="projects/Citibank%20Tower%2C%20Canary%20Wharf.htm" target="leftFrame">Citibank Tower, Canary
             Wharf</a></td>
-        <td><a href="projects/Citibank%20Tower%2C%20Canary%20Wharf.htm" target="leftFrame">Canary Wharf / Adamson Assoc
+        <td><a onclick="rowHighlight(this)" href="projects/Citibank%20Tower%2C%20Canary%20Wharf.htm" target="leftFrame">Canary Wharf / Adamson Assoc
             / Cesar Pelli</a></td>
     </tr>
-    <tr>
+    <tr id="ewg">
         <td><img alt="Click to view more information" height="10" src="images/camera.gif" width="13"/></td>
-        <td><a href="projects/East%20Winter%20Garden%2C%20Canary%20Wharf.htm" target="leftFrame">East Winter Garden,
+        <td><a onclick="rowHighlight(this)" href="projects/East%20Winter%20Garden%2C%20Canary%20Wharf.htm" target="leftFrame">East Winter Garden,
             Canary Wharf</a></td>
-        <td><a href="projects/East%20Winter%20Garden%2C%20Canary%20Wharf.htm" target="leftFrame">Canary Wharf / Cesar
+        <td><a onclick="rowHighlight(this)" href="projects/East%20Winter%20Garden%2C%20Canary%20Wharf.htm" target="leftFrame">Canary Wharf / Cesar
             Pelli</a></td>
     </tr>
     <tr>
@@ -471,24 +518,24 @@
         <td>Hearst Tower, New York</td>
         <td>Tishmann Speyer / Foster &amp; Partners</td>
     </tr>
-    <tr>
+    <tr id="hq1">
         <td><img alt="Click to view more information" height="10" src="images/camera.gif" width="13"/></td>
-        <td><a href="projects/Heron%20Quay%201%2C%20Canary%20Wharf.htm" target="leftFrame">Heron Quay 1, Canary
+        <td><a onclick="rowHighlight(this)" href="projects/Heron%20Quay%201%2C%20Canary%20Wharf.htm" target="leftFrame">Heron Quay 1, Canary
             Wharf</a></td>
-        <td><a href="projects/Heron%20Quay%201%2C%20Canary%20Wharf.htm" target="leftFrame">Canary Wharf / SOM</a></td>
+        <td><a onclick="rowHighlight(this)" href="projects/Heron%20Quay%201%2C%20Canary%20Wharf.htm" target="leftFrame">Canary Wharf / SOM</a></td>
     </tr>
-    <tr>
+    <tr id="hq2">
         <td><img alt="Click to view more information" height="10" src="images/camera.gif" width="13"/></td>
-        <td><a href="projects/Heron%20Quay%202%2C%20Canary%20Wharf.htm" target="leftFrame">Heron Quay 2, Canary
+        <td><a onclick="rowHighlight(this)" href="projects/Heron%20Quay%202%2C%20Canary%20Wharf.htm" target="leftFrame">Heron Quay 2, Canary
             Wharf</a></td>
-        <td><a href="projects/Heron%20Quay%202%2C%20Canary%20Wharf.htm" target="leftFrame">Canary Wharf / Cesar
+        <td><a onclick="rowHighlight(this)" href="projects/Heron%20Quay%202%2C%20Canary%20Wharf.htm" target="leftFrame">Canary Wharf / Cesar
             Pelli</a></td>
     </tr>
-    <tr>
+    <tr id="hq3">
         <td><img alt="Click to view more information" height="10" src="images/camera.gif" width="13"/></td>
-        <td><a href="projects/Heron%20Quay%203%2C%20Canary%20Wharf.htm" target="leftFrame">Heron Quay 3, Canary
+        <td><a onclick="rowHighlight(this)" href="projects/Heron%20Quay%203%2C%20Canary%20Wharf.htm" target="leftFrame">Heron Quay 3, Canary
             Wharf</a></td>
-        <td><a href="projects/Heron%20Quay%203%2C%20Canary%20Wharf.htm" target="leftFrame">Canary Wharf / Cesar
+        <td><a onclick="rowHighlight(this)" href="projects/Heron%20Quay%203%2C%20Canary%20Wharf.htm" target="leftFrame">Canary Wharf / Cesar
             Pelli</a></td>
     </tr>
     <tr>
@@ -516,44 +563,44 @@
         <td>RBS, Doncaster</td>
         <td>RBS / BDP</td>
     </tr>
-    <tr>
+    <tr id="rt4">
         <td><img alt="Click to view more information" height="10" src="images/camera.gif" width="13"/></td>
-        <td><a href="projects/RT4%2C%20Canary%20Wharf.htm" target="leftFrame">RT4, Canary Wharf</a></td>
-        <td><a href="projects/RT4%2C%20Canary%20Wharf.htm" target="leftFrame">Canary Wharf / U%20A studio</a></td>
+        <td><a onclick="rowHighlight(this)" href="projects/RT4%2C%20Canary%20Wharf.htm" target="leftFrame">RT4, Canary Wharf</a></td>
+        <td><a onclick="rowHighlight(this)" href="projects/RT4%2C%20Canary%20Wharf.htm" target="leftFrame">Canary Wharf / U%20A studio</a></td>
     </tr>
     <tr>
         <td>&nbsp;</td>
         <td>The Met. Office, Dorset</td>
         <td>M-Logic / Alsop &amp; St&#246;rmer</td>
     </tr>
-    <tr>
+    <tr id="wwg">
         <td><img alt="Click to view more information" height="10" src="images/camera.gif" width="13"/></td>
-        <td><a href="projects/West%20Winter%20Garden%2C%20Canary%20Wharf.htm" target="leftFrame">West Winter Garden,
+        <td><a onclick="rowHighlight(this)" href="projects/West%20Winter%20Garden%2C%20Canary%20Wharf.htm" target="leftFrame">West Winter Garden,
             Canary Wharf</a></td>
-        <td><a href="projects/West%20Winter%20Garden%2C%20Canary%20Wharf.htm" target="leftFrame">Canary Wharf / Cesar
+        <td><a onclick="rowHighlight(this)" href="projects/West%20Winter%20Garden%2C%20Canary%20Wharf.htm" target="leftFrame">Canary Wharf / Cesar
             Pelli</a></td>
     </tr>
-    <tr>
+    <tr id="trit">
         <td><img alt="Click to view more information" height="10" src="images/camera.gif" width="13"/></td>
-        <td><a href="projects/5%20Triton%20Square%2C%20London.htm" target="leftFrame">5 Triton Square, London</a></td>
-        <td><a href="projects/5%20Triton%20Square%2C%20London.htm" target="leftFrame">British Land / Sheppard
+        <td><a onclick="rowHighlight(this)" href="projects/5%20Triton%20Square%2C%20London.htm" target="leftFrame">5 Triton Square, London</a></td>
+        <td><a onclick="rowHighlight(this)" href="projects/5%20Triton%20Square%2C%20London.htm" target="leftFrame">British Land / Sheppard
             Robson </a></td>
     </tr>
-    <tr>
+    <tr id="ds4">
         <td><img alt="Click to view more information" height="10" src="images/camera.gif" width="13"/></td>
-        <td><a href="projects/DS4%2C%20Canary%20Wharf.htm" target="leftFrame">DS4, Canary Wharf</a></td>
-        <td><a href="projects/DS4%2C%20Canary%20Wharf.htm" target="leftFrame">Canary Wharf / SOM</a></td>
+        <td><a onclick="rowHighlight(this)" href="projects/DS4%2C%20Canary%20Wharf.htm" target="leftFrame">DS4, Canary Wharf</a></td>
+        <td><a onclick="rowHighlight(this)" href="projects/DS4%2C%20Canary%20Wharf.htm" target="leftFrame">Canary Wharf / SOM</a></td>
     </tr>
     <tr>
         <td>&nbsp;</td>
         <td>Heron Quay 4, Canary Wharf</td>
         <td>Canary Wharf / Cesar Pelli</td>
     </tr>
-    <tr>
+    <tr id="hq5">
         <td><img alt="Click to view more information" height="10" src="images/camera.gif" width="13"/></td>
-        <td><a href="projects/Heron%20Quay%205%20(Clifford%20Chance).htm" target="leftFrame">Heron Quay 5 (Clifford
+        <td><a onclick="rowHighlight(this)" href="projects/Heron%20Quay%205%20(Clifford%20Chance).htm" target="leftFrame">Heron Quay 5 (Clifford
             Chance)</a></td>
-        <td><a href="projects/Heron%20Quay%205%20(Clifford%20Chance).htm" target="leftFrame">Canary Wharf / KPF</a></td>
+        <td><a onclick="rowHighlight(this)" href="projects/Heron%20Quay%205%20(Clifford%20Chance).htm" target="leftFrame">Canary Wharf / KPF</a></td>
     </tr>
     <tr>
         <td>&nbsp;</td>
@@ -565,44 +612,44 @@
         <td>The Treasury (GOGGS), London</td>
         <td>Bovis Lend Lease / Stanhope</td>
     </tr>
-    <tr>
+    <tr id="towr">
         <td><img alt="Click to view more information" height="10" src="images/camera.gif" width="13"/></td>
-        <td><a href="projects/Tower%20Place%2C%20London.htm" target="leftFrame">Tower Place, London</a></td>
-        <td><a href="projects/Tower%20Place%2C%20London.htm" target="leftFrame">Tishmann Speyer / Foster &amp;
+        <td><a onclick="rowHighlight(this)" href="projects/Tower%20Place%2C%20London.htm" target="leftFrame">Tower Place, London</a></td>
+        <td><a onclick="rowHighlight(this)" href="projects/Tower%20Place%2C%20London.htm" target="leftFrame">Tishmann Speyer / Foster &amp;
             Partners</a></td>
     </tr>
-    <tr>
+    <tr id="tri2">
         <td><img alt="Click to view more information" height="10" src="images/camera.gif" width="13"/></td>
-        <td><a href="projects/2-3%20Triton%20Square%2C%20London.htm" target="leftFrame">2/3 Triton Square, London</a>
+        <td><a onclick="rowHighlight(this)" href="projects/2-3%20Triton%20Square%2C%20London.htm" target="leftFrame">2/3 Triton Square, London</a>
         </td>
-        <td><a href="projects/2-3%20Triton%20Square%2C%20London.htm" target="leftFrame">British Land / Sheppard
+        <td><a onclick="rowHighlight(this)" href="projects/2-3%20Triton%20Square%2C%20London.htm" target="leftFrame">British Land / Sheppard
             Robson </a></td>
     </tr>
-    <tr>
+    <tr id="blak">
         <td><img alt="Click to view more information" height="10" src="images/camera.gif" width="13"/></td>
-        <td><a href="projects/Blaak%20Tower%2C%20Rotterdam.htm" target="leftFrame">Blaak Tower, Rotterdam</a></td>
-        <td><a href="projects/Blaak%20Tower%2C%20Rotterdam.htm" target="leftFrame">C.G.I. / Murphy-Jahn</a></td>
+        <td><a onclick="rowHighlight(this)" href="projects/Blaak%20Tower%2C%20Rotterdam.htm" target="leftFrame">Blaak Tower, Rotterdam</a></td>
+        <td><a onclick="rowHighlight(this)" href="projects/Blaak%20Tower%2C%20Rotterdam.htm" target="leftFrame">C.G.I. / Murphy-Jahn</a></td>
     </tr>
     <tr>
         <td>&nbsp;</td>
         <td>British Museum, London</td>
         <td>Foster &amp; Partners</td>
     </tr>
-    <tr>
+    <tr id="gla">
         <td><img alt="Click to view more information" height="10" src="images/camera.gif" width="13"/></td>
-        <td><a href="projects/Greater%20London%20Authority.htm" target="leftFrame">Greater London Authority</a></td>
-        <td><a href="projects/Greater%20London%20Authority.htm" target="leftFrame">CIT / Foster &amp; Partners</a></td>
+        <td><a onclick="rowHighlight(this)" href="projects/Greater%20London%20Authority.htm" target="leftFrame">Greater London Authority</a></td>
+        <td><a onclick="rowHighlight(this)" href="projects/Greater%20London%20Authority.htm" target="leftFrame">CIT / Foster &amp; Partners</a></td>
     </tr>
-    <tr>
+    <tr id="gres">
         <td><img alt="Click to view more information" height="10" src="images/camera.gif" width="13"/></td>
-        <td><a href="projects/Gresham%20Street%2C%20London.htm" target="leftFrame">Gresham Street, London</a></td>
-        <td><a href="projects/Gresham%20Street%2C%20London.htm" target="leftFrame">Stanhope / Sheppard Robson</a></td>
+        <td><a onclick="rowHighlight(this)" href="projects/Gresham%20Street%2C%20London.htm" target="leftFrame">Gresham Street, London</a></td>
+        <td><a onclick="rowHighlight(this)" href="projects/Gresham%20Street%2C%20London.htm" target="leftFrame">Stanhope / Sheppard Robson</a></td>
     </tr>
-    <tr>
+    <tr id="hsbc">
         <td><img alt="Click to view more information" height="10" src="images/camera.gif" width="13"/></td>
-        <td><a href="projects/HSBC%20Canary%20Wharf%2C%20London.htm" target="leftFrame">HSBC Canary Wharf, London</a>
+        <td><a onclick="rowHighlight(this)" href="projects/HSBC%20Canary%20Wharf%2C%20London.htm" target="leftFrame">HSBC Canary Wharf, London</a>
         </td>
-        <td><a href="projects/HSBC%20Canary%20Wharf%2C%20London.htm" target="leftFrame">Canary Wharf / Foster &amp;
+        <td><a onclick="rowHighlight(this)" href="projects/HSBC%20Canary%20Wharf%2C%20London.htm" target="leftFrame">Canary Wharf / Foster &amp;
             Partners</a></td>
     </tr>
     <tr>
@@ -615,10 +662,10 @@
         <td>Puddle Dock, London</td>
         <td>Alsop &amp; St&#246;rmer</td>
     </tr>
-    <tr>
+    <tr id="swis">
         <td><img alt="Click to view more information" height="10" src="images/camera.gif" width="13"/></td>
-        <td><a href="projects/SwissRE%20Tower%2C%20London.htm" target="leftFrame">SwissRE Tower, London</a></td>
-        <td><a href="projects/SwissRE%20Tower%2C%20London.htm" target="leftFrame">SwissReinsurance / Foster &amp;
+        <td><a onclick="rowHighlight(this)" href="projects/SwissRE%20Tower%2C%20London.htm" target="leftFrame">SwissRE Tower, London</a></td>
+        <td><a onclick="rowHighlight(this)" href="projects/SwissRE%20Tower%2C%20London.htm" target="leftFrame">SwissReinsurance / Foster &amp;
             Partners</a></td>
     </tr>
     <tr>
@@ -633,13 +680,13 @@
     </tr>
     <tr>
         <td><img alt="Click to view more information" height="10" src="images/camera.gif" width="13"/></td>
-        <td><a href="projects/Citibank%2C%20London.htm" target="leftFrame">Citibank, London</a></td>
-        <td><a href="projects/Citibank%2C%20London.htm" target="leftFrame">Canary Wharf / Foster &amp; Partners</a></td>
+        <td><a onclick="rowHighlight(this)" href="projects/Citibank%2C%20London.htm" target="leftFrame">Citibank, London</a></td>
+        <td><a onclick="rowHighlight(this)" href="projects/Citibank%2C%20London.htm" target="leftFrame">Canary Wharf / Foster &amp; Partners</a></td>
     </tr>
-    <tr>
+    <tr id="citp">
         <td><img alt="Click to view more information" height="10" src="images/camera.gif" width="13"/></td>
-        <td><a href="projects/City%20Point%2C%20London.htm" target="leftFrame">City Point, London</a></td>
-        <td><a href="projects/City%20Point%2C%20London.htm" target="leftFrame">Wates City / Sheppard Robson</a></td>
+        <td><a onclick="rowHighlight(this)" href="projects/City%20Point%2C%20London.htm" target="leftFrame">City Point, London</a></td>
+        <td><a onclick="rowHighlight(this)" href="projects/City%20Point%2C%20London.htm" target="leftFrame">Wates City / Sheppard Robson</a></td>
     </tr>
     <tr>
         <td>&nbsp;</td>
@@ -671,10 +718,10 @@
         <td>Wood Street, London</td>
         <td>Kyle Stewart / Foster &amp; Partners</td>
     </tr>
-    <tr>
+    <tr id="curz">
         <td><img alt="Click to view more information" height="10" src="images/camera.gif" width="13"/></td>
-        <td><a href="projects/1%20Curzon%20Street%2C%20London.htm" target="leftFrame">1 Curzon Street, London </a></td>
-        <td><a href="projects/1%20Curzon%20Street%2C%20London.htm" target="leftFrame">Development Securities / T P
+        <td><a onclick="rowHighlight(this)" href="projects/1%20Curzon%20Street%2C%20London.htm" target="leftFrame">1 Curzon Street, London </a></td>
+        <td><a onclick="rowHighlight(this)" href="projects/1%20Curzon%20Street%2C%20London.htm" target="leftFrame">Development Securities / T P
             Bennett</a></td>
     </tr>
     <tr>
@@ -697,10 +744,10 @@
         <td>Shire %20 Milton House, London</td>
         <td>Development Securities / Sheppard Robson</td>
     </tr>
-    <tr>
+    <tr id="winc">
         <td><img alt="Click to view more information" height="10" src="images/camera.gif" width="13"/></td>
-        <td><a href="projects/Winchester%20House%2C%20London.htm" target="leftFrame">Winchester House, London</a></td>
-        <td><a href="projects/Winchester%20House%2C%20London.htm" target="leftFrame">Deutsche Bank / Swanke Hayden
+        <td><a onclick="rowHighlight(this)" href="projects/Winchester%20House%2C%20London.htm" target="leftFrame">Winchester House, London</a></td>
+        <td><a onclick="rowHighlight(this)" href="projects/Winchester%20House%2C%20London.htm" target="leftFrame">Deutsche Bank / Swanke Hayden
             Connel</a></td>
     </tr>
     <tr>
@@ -723,10 +770,10 @@
         <td>ITN Headoffice, London</td>
         <td>Stanhope / Foster &amp; Partners</td>
     </tr>
-    <tr>
+    <tr id="troc">
         <td><img alt="Click to view more information" height="10" src="images/camera.gif" width="13"/></td>
-        <td><a href="projects/Trocadero%2C%20London.htm" target="leftFrame">Trocadero, London</a></td>
-        <td><a href="projects/Trocadero%2C%20London.htm" target="leftFrame">RTKL</a></td>
+        <td><a onclick="rowHighlight(this)" href="projects/Trocadero%2C%20London.htm" target="leftFrame">Trocadero, London</a></td>
+        <td><a onclick="rowHighlight(this)" href="projects/Trocadero%2C%20London.htm" target="leftFrame">RTKL</a></td>
     </tr>
     <tr>
         <td>&nbsp;</td>
@@ -743,22 +790,22 @@
         <td>Hotel Olympica, Barcelona</td>
         <td>Bovis-Shimizu / SOM</td>
     </tr>
-    <tr>
+    <tr id="luc">
         <td><img alt="Click to view more information" height="10" src="images/camera.gif" width="13"/></td>
-        <td><a href="projects/London%20Underwriting%20Centre%2C%20London.htm" target="leftFrame">London Underwriting
+        <td><a onclick="rowHighlight(this)" href="projects/London%20Underwriting%20Centre%2C%20London.htm" target="leftFrame">London Underwriting
             Centre, London</a></td>
-        <td><a href="projects/London%20Underwriting%20Centre%2C%20London.htm" target="leftFrame">LUC / YRM</a></td>
+        <td><a onclick="rowHighlight(this)" href="projects/London%20Underwriting%20Centre%2C%20London.htm" target="leftFrame">LUC / YRM</a></td>
     </tr>
     <tr>
         <td>&nbsp;</td>
         <td>BT Tower, London</td>
         <td>BT</td>
     </tr>
-    <tr>
+    <tr id="harb">
         <td><img alt="Click to view more information" height="10" src="images/camera.gif" width="13"/></td>
-        <td><a href="projects/Harbour%20Exchange%20Buildings%201%262%2C%20London.htm" target="leftFrame">Harbour
+        <td><a onclick="rowHighlight(this)" href="projects/Harbour%20Exchange%20Buildings%201%262%2C%20London.htm" target="leftFrame">Harbour
             Exchange Buildings 1&amp;2, London</a></td>
-        <td><a href="projects/Harbour%20Exchange%20Buildings%201%262%2C%20London.htm" target="leftFrame">Charter House /
+        <td><a onclick="rowHighlight(this)" href="projects/Harbour%20Exchange%20Buildings%201%262%2C%20London.htm" target="leftFrame">Charter House /
             Fred Gibberd Coombes</a></td>
     </tr>
     <tr>
@@ -806,10 +853,10 @@
         <td>No1 America Square, London</td>
         <td>C&amp;C Prop / RHWL</td>
     </tr>
-    <tr>
+    <tr id="enoc">
         <td><img alt="Click to view more information" height="10" src="images/camera.gif" width="13"/></td>
-        <td><a href="projects/St%20Enoch%20Centre%2C%20Glasgow.htm" target="leftFrame">St Enoch Centre, Glasgow</a></td>
-        <td><a href="projects/St%20Enoch%20Centre%2C%20Glasgow.htm" target="leftFrame">Church Comm. / GMW-Reiach &amp;
+        <td><a onclick="rowHighlight(this)" href="projects/St%20Enoch%20Centre%2C%20Glasgow.htm" target="leftFrame">St Enoch Centre, Glasgow</a></td>
+        <td><a onclick="rowHighlight(this)" href="projects/St%20Enoch%20Centre%2C%20Glasgow.htm" target="leftFrame">Church Comm. / GMW-Reiach &amp;
             Hall</a></td>
     </tr>
     <tr>

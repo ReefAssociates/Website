@@ -33,7 +33,8 @@
         function getQueryStringParameter(name) {
             const urlParams = new URLSearchParams(window.location.search);
             return urlParams.get(name);
-        }</script>
+        }
+    </script>
 </head>
 <body>
     <table border="0" cellpadding="0" cellspacing="0">
@@ -45,22 +46,36 @@
         </tr>
         <tr>
             <td>
-                <a href="project_frame.htm" target="main">
+                <a id="backLink" href="project_frame.htm" target="main">
                     <img id="centeredImage" src="" alt="" />
                 </a>
             </td>
         </tr>
     </table>
     <script>
+        var ref=getQueryStringParameter('ref');
+
+        var backLink = document.getElementById('backLink');
+        if (backLink){
+            backLink.href = 'project_frame.htm?ref=' + ref;
+        }
+
         var image = document.getElementById('centeredImage');
-        image.src = 'images/prj/' + getQueryStringParameter('ref') + '_' + getQueryStringParameter('num') + '.jpg';
-        image.alt = getQueryStringParameter('full');
+        if (image){
+            image.src = 'images/prj/' + ref + '_' + getQueryStringParameter('num') + '.jpg';
+            image.alt = getQueryStringParameter('full');
+        }
 
         var header = document.getElementById('full');
-        header.innerText = image.alt;
+        if (header){
+            header.innerText = image.alt;
+        }
 
         var client = document.getElementById('client');
-        client.innerText = getQueryStringParameter('client');
+        if (client)
+        {
+            client.innerText = getQueryStringParameter('client');
+        }
     </script>
 </body>
 </html>
